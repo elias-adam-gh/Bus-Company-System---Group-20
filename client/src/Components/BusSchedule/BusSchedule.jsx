@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
+import axios from 'axios'
 import './BusSchedule.css'
 
 // This page should be completed by Sunidhi & Lucas
@@ -19,9 +20,25 @@ import './BusSchedule.css'
 const BusSchedule = () =>
 {
 	const location = useLocation();
-
+	const [busRoutes, setBusRoutes] = useState([])
 	// Access the passed state from the search component
     const { from, to, date } = location.state || {};
+	
+	const fetchData = async (from, to, date) => {
+		try {
+			const response = await axios.get(`http://localhost:3000/buses/${from}/${to}/${date}`);
+			busRoutes = setBusRoutes(response.data);
+		} 
+		catch (error) {
+			console.error('Error fetching data:', error);
+		}
+	};
+	
+	useEffect(() => {		
+    	if (from && to && date) {
+      		fetchData(from, to, date);
+    	}
+  	}, [from, to, date]);
 
 	return (
 		<div className='bus-schedule'>
