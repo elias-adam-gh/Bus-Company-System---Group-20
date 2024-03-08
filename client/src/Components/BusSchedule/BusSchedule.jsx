@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
-import axios from 'axios'
 import './BusSchedule.css'
+import axios from 'axios'
 
 // This page should be completed by Sunidhi & Lucas
 
@@ -23,22 +23,23 @@ const BusSchedule = () =>
 	const [busRoutes, setBusRoutes] = useState([])
 	// Access the passed state from the search component
     const { from, to, date } = location.state || {};
-	
+	const encodedDate = encodeURIComponent(date.toISOString().split('T')[0]);
+
 	const fetchData = async (from, to, date) => {
 		try {
-			const response = await axios.get(`http://localhost:3000/buses/${from}/${to}/${date}`);
-			busRoutes = setBusRoutes(response.data);
-		} 
+			const response = await axios.get(`http://localhost:4000/buses/${from}/${to}/${date}`);
+			setBusRoutes(response.data);
+		}
 		catch (error) {
 			console.error('Error fetching data:', error);
 		}
 	};
 	
 	useEffect(() => {		
-    	if (from && to && date) {
-      		fetchData(from, to, date);
+    	if (from && to && encodedDate) {
+      		fetchData(from, to, encodedDate);
     	}
-  	}, [from, to, date]);
+  	}, [from, to, encodedDate]);
 
 	return (
 		<div className='bus-schedule'>
@@ -47,7 +48,7 @@ const BusSchedule = () =>
 				<p>Showing bus schedule from {from} to {to} on {date ? date.toLocaleDateString() : ''}</p>
 			</div>
 			<div className='bus-schedule-content'>
-				{/* Add your bus schedule content here */}
+				{}
 			</div>
 		</div>
 	)
