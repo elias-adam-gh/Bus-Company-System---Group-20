@@ -1,0 +1,178 @@
+/* Styling for the Contact Page will go here */
+.contact-page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-page-container1 {
+  height: 529px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.contact-page-message-container {
+  flex: auto;
+  width: auto;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-self: center;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-page-text {
+  font-size: 20px;
+  align-self: stretch;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+}
+.contact-page-text01 {
+  font-size: 18px;
+  align-self: stretch;
+  text-align: center;
+}
+.contact-page-text12 {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+}
+.contact-page-text13 {
+  font-size: 18px;
+}
+.contact-page-text14 {
+  font-size: 18px;
+}
+.contact-page-text15 {
+  font-size: 18px;
+}
+.contact-page-contact-form-container {
+  flex: auto;
+  width: 661px;
+  height: 100%;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contact-page-form {
+  width: 516px;
+  height: 531px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-page-name {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.contact-page-text25 {
+  align-self: flex-start;
+  text-align: right;
+}
+.contact-page-text26 {
+  align-self: flex-start;
+  text-align: right;
+}
+.contact-page-name-container {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contact-page-textinput {
+  width: 50%;
+}
+.contact-page-textinput1 {
+  width: 50%;
+}
+.contact-page-email-container {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contact-page-text27 {
+  align-self: flex-start;
+}
+.contact-page-textinput2 {
+  width: 100%;
+  height: auto;
+  text-align: left;
+}
+.contact-page-phone-container {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contact-page-text28 {
+  align-self: flex-start;
+}
+.contact-page-textinput3 {
+  width: 100%;
+  height: auto;
+  text-align: left;
+}
+.contact-page-text29 {
+  align-self: flex-start;
+  margin-top: var(--dl-space-space-unit);
+  text-align: center;
+}
+.contact-page-textarea {
+  width: 100%;
+  height: 50%;
+}
+.contact-page-submit-button {
+  align-self: flex-start;
+}
+@media(max-width: 1600px) {
+  .contact-page-message-container {
+    height: 100%;
+  }
+  .contact-page-text {
+    font-size: 22px;
+    align-self: center;
+  }
+  .contact-page-text12 {
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+  }
+}
+@media(max-width: 1200px) {
+  .contact-page-container1 {
+    height: 604px;
+  }
+  .contact-page-message-container {
+    height: 513px;
+    align-self: center;
+  }
+  .contact-page-textarea {
+    height: 290px;
+  }
+}

@@ -1,0 +1,94 @@
+/* Styling for the FAQPage will go here */
+.faq-page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.faq-page-container1 {
+  height: 762px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.faq-page-text {
+  align-self: center;
+  margin-top: var(--dl-space-space-unit);
+  margin-left: var(--dl-space-space-twounits);
+  margin-right: var(--dl-space-space-twounits);
+  margin-bottom: var(--dl-space-space-unit);
+}
+.faq-page-text01 {
+  align-self: center;
+  text-align: center;
+}
+.faq-page-text02 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text06 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text12 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text13 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text17 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text18 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text22 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text23 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text27 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text28 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text32 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text33 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text37 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text38 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text42 {
+  align-self: stretch;
+  text-align: center;
+}
+.faq-page-text43 {
+  align-self: stretch;
+  text-align: center;
+}
