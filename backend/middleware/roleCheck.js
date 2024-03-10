@@ -5,7 +5,7 @@ const verifyRoles = (...allowedRoles) => {
     const authHeader = req.headers.authorization;
     if (authHeader) {
       const token = authHeader.split(' ')[1];
-      
+
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err)    return res.sendStatus(403);
         if (!allowedRoles.includes(user.role))  return res.sendStatus(401);
@@ -14,7 +14,7 @@ const verifyRoles = (...allowedRoles) => {
         next();
       });
     } 
-    
+
     else {
       res.sendStatus(401);
     }

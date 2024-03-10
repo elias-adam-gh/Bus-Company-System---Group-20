@@ -1,44 +1,54 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const { autoIncrement } = require('mongoose-plugin-autoinc');
 
-const connection = mongoose.createConnection(process.env.DATABASE_URI);
-autoIncrement.initialize(connection);
+const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
-  username: { type: String, 
-    required: true, 
-    unique: true 
+// define schema
+const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true
   },
-  email: { 
-    type: String, 
-    required: true, 
-    unique: true 
+  email: {
+    type: String,
+    required: true,
+    unique: true
   },
-  password: { 
-    type: String, 
-    required: true 
+  password: {
+    type: String,
+    required: true
   },
-  role: { 
-    type: String, 
-    required: true, 
-    enum: ['user', 'employee', 'admin'], default: 'user' 
+  role: {
+    type: String,
+    required: true,
+    enum: ['user', 'employee', 'admin'],
+    default: 'user'
   }
 });
 
-userSchema.plugin(autoIncrement.plugin, { 
-  model: 'User', 
-  field: 'userId', 
-  startAt: 1, 
+// init autoIncrement to schema
+userSchema.plugin(autoIncrement, {
+  model: 'User',
+  field: 'userId',
+  startAt: 1,
   incrementBy: 1
 });
 
+
 userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
-  
-  this.password = await bcrypt.hash(this.password, 8);
+  // if (this.isModified('password')) {
+  //   this.password = await bcrypt.hash(this.password, 10);
+  // }
+  next();
 });
 
-userSchema.methods.comparePassword = function(candidatePassword) {
-  return bcrypt.compare(candidatePassword, this.password);
-};
+// method to compare a candidate password with user password
+// userSchema.methods.comparePassword = async function(candidatePassword) {
+//   return bcrypt.compare(candidatePassword, this.password);
+// };
 
-module.exports = mongoose.model('User', userSchema);
+// compile and export the model
+const User = mongoose.model('User', userSchema);
+module.exports = User;
